@@ -1,0 +1,35 @@
+html,body {
+    height: 100%;
+}
+body {
+ background: url('https://images.unsplash.com/photo-1501139083538-0139583c060f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dGltZXxlbnwwfHwwfHw%3D&w=1000&q=80');
+   
+
+
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+#clock {
+    font-family: Arial, Helvetica, sans-serif;
+    color:darkorange;
+    font-size: 55px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: mistyrose;
+    
+    }
+    .date {
+        letter-spacing: 0.1em;
+        font-size: 36px;
+    }
+    .text {
+        letter-spacing: 0.1em;
+        font-size: 30;
+        padding: 20px 0 0;
+    }
+}

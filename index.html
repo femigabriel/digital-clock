@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dig clock</title>
+</head>
+<body>
+    <div id="clock">
+        <p class="date">{{ date }}</p>
+        <p class="time">{{ time }}</p>
+       
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js">	
+    </script>
+    <script>
+        var clock = new Vue({
+    el: '#clock',
+    data: {
+        time: '',
+        date: ''
+    }
+});
+
+var week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+var timerID = setInterval(updateTime, 1000);
+updateTime();
+function updateTime() {
+    var cd = new Date();
+    clock.time = ClockTime(cd.getHours(), 2) + ':' + ClockTime(cd.getMinutes(), 2) + ':' + ClockTime(cd.getSeconds(), 2);
+    clock.date = ClockTime(cd.getFullYear(), 4) + '-' + ClockTime(cd.getMonth()+1, 2) + '-' + ClockTime(cd.getDate(), 2) + ' ' + week[cd.getDay()];
+};
+
+function ClockTime(num, digit) {
+    var zero = '';
+    for(var i = 0; i < digit; i++) {
+        zero += '0';
+    }
+    return (zero + num).slice(-digit);
+}
+    </script>
+</body>
+</html>
